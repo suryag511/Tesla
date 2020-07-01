@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+<head th:fragment="header-css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.1.0/css/bootstrap.min.css/}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/font-awesome/5.0.10/web-fonts-with-css/css/fontawesome-all.min.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+    <link rel="icon" type="image/ico" th:href="@{/img/favicon.ico}"/>
+    <title>Digital Cinephilia</title>
+    <link rel="stylesheet" type="text/css" th:href="@{css/bootstrap.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{vendors/linericon/style.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{css/font-awesome.min.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{vendors/owl-carousel/owl.carousel.min.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{vendors/lightbox/simpleLightbox.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{vendors/nice-select/css/nice-select.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{vendors/animate-css/animate.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{vendors/popup/magnific-popup.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{css/style.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{css/responsive.css}" />
+</head>
+<body>
+<div th:fragment="header">
+    <header class="header_area">
+        <div class="main_menu">
+            <nav class="navbar navbar-expand-sm navbar-light bg-light">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <a class="navbar-brand " th:href="@{/}"><img src="img/logo.png" alt="">
+                        Digital Cinephilia</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav menu_nav ml-auto">
+                            <li class="nav-item active"><a class="nav-link"  th:href="@{/}">Home</a></li>
+                            <li class="nav-item"><a class="nav-link"  th:href="@{/}">About</a></li>
+                            <li class="nav-item "><a class="nav-link"  href="/register">Register</a></li>
+
+                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        </ul>
+
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <br>    <br>    <br>    <br>    <br>
+            <!--================Header Menu Area =================-->
+</div>
+</body>
+</html>

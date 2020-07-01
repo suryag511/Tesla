@@ -1,0 +1,20 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<html lang="en">
+<head>
+    <head th:replace="fragments/header :: header-css">
+    </head>
+<body>
+
+<div th:replace="fragments/header :: header"></div>
+    <div class="container">
+        <h3  th:if="${out.equals('null')}" th:text = "'Please select a choice'" />
+        <h3  th:if="${out.equals('pass')}" th:text = "'Right Answer'" />
+        <h3  th:if="${out.equals('fail')}" th:text = "'Wrong Answer'" />
+
+
+    </div>>
+<div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>

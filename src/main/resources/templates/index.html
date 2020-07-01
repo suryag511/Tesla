@@ -1,0 +1,65 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<html lang="en">
+    <head>
+		<head th:replace="fragments/header :: header-css">
+    </head>
+    <body>
+
+	<div th:replace="fragments/header :: header"></div>
+    <div class="container">
+        <div class="row" style="margin-top:20px">
+            <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+                <form class="form-signin" autocomplete="off" th:action="@{index}"  method="POST">
+                    <div th:if="${param.logout}">
+                        <div class="alert alert-info" th:text="'You have been logged out'">
+                        </div>
+                    </div>
+                    <fieldset>
+                        <h1 th:text="'Sign-In'"></h1>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-3">UserName</label>
+                            <div class="col-md-7">
+                                <div class="form-group">
+                                    <input type="text" name="username" class="form-control input-lg" placeholder="" required="true" autofocus="true"/>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Password</label>
+                            <div class="col-md-7">
+                                <div class="form-group">
+                                        <input type="password" name="password" class="form-control input-lg" required="true"/>
+                                    </div>
+                            </div>
+                        </div>
+                        <div th:if="${param.error}">
+                            <div class="alert alert-danger" th:text="*{error}"></div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <input type="submit" name="submit" id="submit" class="btn btn-lg btn-primary btn-block" th:value="'log in'"/>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <h5>
+                            <span class="d-inline-flex p-2 bd-higlight" th:text="'You need to Sign in?'"></span>
+                            <span><a th:href="@{/register}" th:text="'Register'"></a></span>
+                            <br>
+                            <span class="d-inline-flex p-2 bd-higlight" th:text="'Forgot Password'"></span>
+                            <span><a th:href="@{/forgot password}" th:text="'Click here'"></a></span>
+                            <br>
+                        </h5>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+                        <div th:replace="fragments/footer :: footer"></div>
+    </body>
+</html>
