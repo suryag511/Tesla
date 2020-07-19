@@ -1,53 +1,51 @@
 package com.Tesla.Tesla.model;
 
-import java.util.ArrayList;
-import java.util.Collection;
 
 import com.sun.istack.NotNull;
 import lombok.Data;
 import com.Tesla.Tesla.controller.RegisterController;
-
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.TableGenerator;
-
-import com.Tesla.Tesla.model.User;
-
+import javax.persistence.*;
 
 @Entity
-public class Book implements java.io.Serializable{
+@Data
+@Table(name = "Book")
+public class Book {
 
-    private static final long serialVersionUID = 1L;
-
-    @TableGenerator(name = "BOOK_GEN", allocationSize = 1)
     @Id
-    @GeneratedValue(generator = "BOOK_GEN")
-    private int id;
-    private String book_name;
-    private String publish_year;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "book_id")
+    private Long id;
+
+    @NotNull
+    @Column
+    private String bookname;
+
+    @NotNull
+    @Column
     private String publisher;
-    private Boolean status;
 
+    @NotNull
+    @Column
+    private String publish_year;
 
-    public int getId() {return id; }
-    public void setId(int id) {this.id = id;}
+    @NotNull
+    @Column
+    private String status;
 
-    public String getBook_name(){
-        return book_name;
+    public Long getId() {
+        return id;
     }
-    public void setBook_name(String book_name){
-        this.book_name = book_name;
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public String getPublish_year(){
-        return publish_year;
+    public String getBookname() {
+        return bookname;
     }
-    public void setPublish_year(String publish_year){
-        this.publish_year = publish_year;
+
+    public void setBookname(String bookname) {
+        this.bookname = bookname;
     }
 
     public String getPublisher() {
@@ -58,11 +56,20 @@ public class Book implements java.io.Serializable{
         this.publisher = publisher;
     }
 
-    public Boolean getStatus() {
+    public String getPublish_year() {
+        return publish_year;
+    }
+
+    public void setPublish_year(String publish_year) {
+        this.publish_year = publish_year;
+    }
+
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(Boolean status) {
+    public void setStatus(String status) {
         this.status = status;
     }
+
 }
